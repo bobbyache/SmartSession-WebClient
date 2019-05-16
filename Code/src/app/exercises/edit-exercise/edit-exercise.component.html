@@ -1,0 +1,30 @@
+<h2>Create/Edit Exercise</h2>
+
+<div>
+  <form [formGroup]="exerciseForm" (ngSubmit)="saveExercise(exerciseForm.value)" autocomplete="off" novalidate >
+    <div [ngClass]="{'error': exerciseForm.controls.exerciseName.invalid && exerciseForm.controls.exerciseName.touched}">
+      <label for="exerciseName">Exercise Name:</label>
+      <input id="exerciseName" formControlName="exerciseName" type="text" placeholder="exercise name..." />
+    </div>
+    <div [ngClass]="{'error': exerciseForm.controls.source.invalid && exerciseForm.controls.source.touched}">
+      <label for="source">Source:</label>
+      <input id="source" formControlName="source" type="text" placeholder="exercise name..." />
+    </div>
+    <div [ngClass]="{'error': exerciseForm.controls.category.invalid && exerciseForm.controls.category.touched}">
+      <label for="category">Category:</label>
+      <select id="category" formControlName="category" >
+        <option value="">-- SELECT --</option>
+        <option value="1">Guitar Pro File</option>
+        <option value="2">Online Lesson</option>
+        <option value="3">Book</option>
+      </select>
+    </div>
+    <div [ngClass]="[ error ]">
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" rows=3 placeholder="description..."></textarea>
+    </div>
+
+    <button type="submit">Create</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </form>
+</div>

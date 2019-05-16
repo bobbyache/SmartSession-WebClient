@@ -1,0 +1,36 @@
+<h2>Create a Goal</h2>
+
+<div>
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
+    <div class="form=-group">
+      <label for="goalName">Goal Name:</label>
+      <em *ngIf="loginForm.controls.goalName?.invalid && (loginForm.controls.goalName?.touched || mouseOverLogin)">Required</em>
+      <input (ngModel)="goalName" name="goalName" id="goalName" type="text" placeholder="session name..." required />
+    </div>
+    <div class="form-group">
+      <label for="deadlineDate">Deadline:</label>
+      <em *ngIf="loginForm.controls.deadlineDate?.invalid && (loginForm.controls.deadlineDate?.touched || mouseOverLogin)">Required</em>
+      <input (ngModel)="deadlineDate" name="deadlineDate" id="deadlineDate" type="text" placeholder="presenter..." required />
+    </div>
+    <div>
+      <label for="category">Category:</label>
+      <em *ngIf="loginForm.controls.category?.invalid && (loginForm.controls.category?.touched || mouseOverLogin)">Required</em>
+      <select (ngModel)="category" name="category" id="category" required >
+        <option value="">-- SELECT --</option>
+        <option value="1">Band Song</option>
+        <option value="2">Campfire Song</option>
+        <option value="3">Solo</option>
+        <option value="4">Exercise Group</option>
+        <option value="4">Course</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea (ngModel)="description" name="description" id="description" rows=3 placeholder="description..."></textarea>
+    </div>
+    <span (mouseenter)="mouseOverLogin=true" (mouseleave)="mouseOverLogin=false">
+      <button type="submit" [disabled]="loginForm.invalid">Create</button>
+    </span>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </form>
+</div>
