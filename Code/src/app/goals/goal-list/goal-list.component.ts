@@ -13,6 +13,13 @@ export class GoalListComponent implements OnInit {
   constructor(private goalService: GoalService) { }
 
   ngOnInit(): void {
-    this.goals = this.goalService.getEvents();
+    this.goalService.allgoals().subscribe(
+      (result) => {
+        this.goals = result;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

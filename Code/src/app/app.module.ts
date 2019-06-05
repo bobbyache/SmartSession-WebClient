@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExerciseListComponent } from './exercises/exercise-list/exercise-list.component';
 import { EditExerciseComponent } from './exercises/edit-exercise/edit-exercise.component';
 import { ExerciseService } from './shared/exercise.service';
+import { ApplicationSettingsService } from './shared/application-settings.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { ExerciseService } from './shared/exercise.service';
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatListModule,
     MatIconModule,
@@ -46,8 +49,12 @@ import { ExerciseService } from './shared/exercise.service';
     ReactiveFormsModule
     // FlexLayoutModule
   ],
+  exports: [
+    HttpClientModule
+  ],
   providers: [
     // for all your services etc.
+    ApplicationSettingsService,
     GoalService,
     ExerciseService
   ],
