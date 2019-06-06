@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { Overlay } from '@angular/cdk/overlay';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule, MatSnackBarModule } from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatListModule} from '@angular/material/list';
@@ -23,6 +24,9 @@ import { ExerciseListComponent } from './exercises/exercise-list/exercise-list.c
 import { EditExerciseComponent } from './exercises/edit-exercise/edit-exercise.component';
 import { ExerciseService } from './shared/exercise.service';
 import { ApplicationSettingsService } from './shared/application-settings.service';
+import { SnackbarService } from './shared/snackbar.service';
+import { from } from 'rxjs';
+import { CoreInfrastructureService } from './shared/core-infrastructure.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,7 @@ import { ApplicationSettingsService } from './shared/application-settings.servic
     MatProgressBarModule,
     MatButtonModule,
     MatTableModule,
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule
     // FlexLayoutModule
@@ -53,10 +58,14 @@ import { ApplicationSettingsService } from './shared/application-settings.servic
     HttpClientModule
   ],
   providers: [
+    Overlay,
+    MatSnackBarModule,
     // for all your services etc.
+    CoreInfrastructureService,
     ApplicationSettingsService,
     GoalService,
-    ExerciseService
+    ExerciseService,
+    SnackbarService
   ],
   bootstrap: [AppComponent]
 })
