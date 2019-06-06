@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatListModule, MatIconModule, MatProgressBarModule, MatButtonModule, MatTableModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoalService } from 'src/app/shared/goal.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { ApplicationSettingsService } from 'src/app/shared/application-settings.service';
 
 describe('CreateGoalComponent', () => {
   let component: CreateGoalComponent;
@@ -38,6 +40,9 @@ describe('CreateGoalComponent', () => {
         ReactiveFormsModule
       ],
       providers: [
+        ApplicationSettingsService,
+        HttpHandler,
+        HttpClient,
         GoalService
       ]
     })
