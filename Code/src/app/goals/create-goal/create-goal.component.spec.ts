@@ -8,11 +8,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from 'src/app/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatListModule, MatIconModule, MatProgressBarModule, MatButtonModule, MatTableModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoalService } from 'src/app/shared/goal.service';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ApplicationSettingsService } from 'src/app/shared/application-settings.service';
+import { SnackbarService } from 'src/app/shared/snackbar.service';
+import { CoreInfrastructureService } from 'src/app/shared/core-infrastructure.service';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('CreateGoalComponent', () => {
   let component: CreateGoalComponent;
@@ -30,17 +32,14 @@ describe('CreateGoalComponent', () => {
         BrowserModule,
         RouterModule.forRoot(AppRoutes),
         BrowserAnimationsModule,
-        MatToolbarModule,
-        MatListModule,
-        MatIconModule,
-        MatProgressBarModule,
-        MatButtonModule,
-        MatTableModule,
+        MaterialModule,
         FormsModule,
         ReactiveFormsModule
       ],
       providers: [
+        SnackbarService,
         ApplicationSettingsService,
+        CoreInfrastructureService,
         HttpHandler,
         HttpClient,
         GoalService

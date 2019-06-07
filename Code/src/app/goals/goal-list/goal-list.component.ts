@@ -14,7 +14,7 @@ export class GoalListComponent implements OnInit {
   constructor(private goalService: GoalService, private core: CoreInfrastructureService) { }
 
   ngOnInit(): void {
-    this.goalService.allgoals().subscribe(
+    this.goalService.all().subscribe(
       (result) => {
         this.goals = result;
       },

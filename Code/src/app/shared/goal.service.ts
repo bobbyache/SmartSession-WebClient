@@ -13,7 +13,7 @@ export class GoalService {
     console.log(goal);
   }
 
-  allgoals() {
+  all() {
     const baseUrl = this.core.baseUrl();
     const headers = this.core.httpHeaders();
 
