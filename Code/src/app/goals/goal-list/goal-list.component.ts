@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GoalService } from 'src/app/shared/goal.service';
-import { SnackbarService } from 'src/app/shared/snackbar.service';
 import { CoreInfrastructureService } from 'src/app/shared/core-infrastructure.service';
 
 @Component({

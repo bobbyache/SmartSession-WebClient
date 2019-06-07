@@ -5,13 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { Overlay } from '@angular/cdk/overlay';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatSnackBarModule } from '@angular/material';
-import {MatTableModule} from '@angular/material/table';
-// import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { GoalListComponent } from './goals/goal-list/goal-list.component';
 import { AppRoutes } from './app-routing.module';
@@ -27,10 +20,10 @@ import { ApplicationSettingsService } from './shared/application-settings.servic
 import { SnackbarService } from './shared/snackbar.service';
 import { from } from 'rxjs';
 import { CoreInfrastructureService } from './shared/core-infrastructure.service';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [
-    // your components and pipes etc.
     AppComponent,
     ExerciseListComponent,
     GoalListComponent,
@@ -43,23 +36,15 @@ import { CoreInfrastructureService } from './shared/core-infrastructure.service'
     RouterModule.forRoot(AppRoutes),
     BrowserAnimationsModule,
     HttpClientModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    MatProgressBarModule,
-    MatButtonModule,
-    MatTableModule,
-    MatSnackBarModule,
     FormsModule,
-    ReactiveFormsModule
-    // FlexLayoutModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   exports: [
     HttpClientModule
   ],
   providers: [
     Overlay,
-    MatSnackBarModule,
     // for all your services etc.
     CoreInfrastructureService,
     ApplicationSettingsService,
