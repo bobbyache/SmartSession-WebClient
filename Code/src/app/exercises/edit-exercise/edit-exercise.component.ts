@@ -34,7 +34,9 @@ export class EditExerciseComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.exerciseNameInputBox.nativeElement.focus();
+    if (this.exerciseNameInputBox.nativeElement) {
+      this.exerciseNameInputBox.nativeElement.focus();
+    }
   }
 
   saveExercise(formValues) {

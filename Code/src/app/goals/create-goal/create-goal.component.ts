@@ -24,7 +24,9 @@ export class CreateGoalComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.goalNameInputBox.nativeElement.focus();
+    if (this.goalNameInputBox.nativeElement) {
+      this.goalNameInputBox.nativeElement.focus();
+    }
   }
 
   login(formValues) {
