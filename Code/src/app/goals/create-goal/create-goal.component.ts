@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { IGoal } from '../goal.model';
 import { GoalService } from 'src/app/shared/goal.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './create-goal.component.html',
   styleUrls: ['./create-goal.component.scss']
 })
-export class CreateGoalComponent implements OnInit {
+export class CreateGoalComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('goalNameInput') goalNameInputBox;
 
   goalName: string;
   deadlineDate: string;
@@ -19,6 +21,10 @@ export class CreateGoalComponent implements OnInit {
   constructor(private goalService: GoalService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.goalNameInputBox.nativeElement.focus();
   }
 
   login(formValues) {

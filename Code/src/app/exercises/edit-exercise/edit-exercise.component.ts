@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators    } from '@angular/forms';
 import { ExerciseService } from 'src/app/shared/exercise.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './edit-exercise.component.html',
   styleUrls: ['./edit-exercise.component.scss']
 })
-export class EditExerciseComponent implements OnInit {
+export class EditExerciseComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('exerciseNameInput') exerciseNameInputBox;
 
   exerciseForm: FormGroup;
 
@@ -29,6 +31,10 @@ export class EditExerciseComponent implements OnInit {
       category,
       description
     });
+  }
+
+  ngAfterViewInit() {
+    this.exerciseNameInputBox.nativeElement.focus();
   }
 
   saveExercise(formValues) {

@@ -4,7 +4,7 @@
   <form [formGroup]="exerciseForm" (ngSubmit)="saveExercise(exerciseForm.value)" autocomplete="off" novalidate >
     <div [ngClass]="{'error': exerciseForm.controls.exerciseName.invalid && exerciseForm.controls.exerciseName.touched}">
       <label for="exerciseName">Exercise Name:</label>
-      <input id="exerciseName" formControlName="exerciseName" type="text" placeholder="exercise name..." />
+      <input #exerciseNameInput id="exerciseName" formControlName="exerciseName" type="text" placeholder="exercise name..." />
     </div>
     <div [ngClass]="{'error': exerciseForm.controls.source.invalid && exerciseForm.controls.source.touched}">
       <label for="source">Source:</label>
