@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators    } from '@angular/forms';
 import { ExerciseService } from 'src/app/shared/exercise.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EditExerciseComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('exerciseNameInput') exerciseNameInputBox;
+  @ViewChild('exerciseNameInput') exerciseNameInputBox: ElementRef;
 
   exerciseForm: FormGroup;
 

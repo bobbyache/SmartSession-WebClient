@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { IGoal } from '../goal.model';
 import { GoalService } from 'src/app/shared/goal.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateGoalComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('goalNameInput') goalNameInputBox;
+  @ViewChild('goalNameInput') goalNameInputBox: ElementRef;
 
   goalName: string;
   deadlineDate: string;
