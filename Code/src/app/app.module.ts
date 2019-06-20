@@ -33,7 +33,7 @@ import { MaterialModule } from './shared/material.module';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(AppRoutes),
+    RouterModule.forRoot(AppRoutes), // points to your app-routing.module
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
