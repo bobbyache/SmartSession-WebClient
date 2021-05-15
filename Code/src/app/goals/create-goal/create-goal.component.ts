@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateGoalComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('goalNameInput') goalNameInputBox: ElementRef;
+  @ViewChild('goalNameInput', { static: true }) goalNameInputBox: ElementRef;
 
   goalName: string;
   deadlineDate: string;
