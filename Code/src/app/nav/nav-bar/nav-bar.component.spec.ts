@@ -7,7 +7,8 @@ import { GoalListComponent } from 'src/app/goals/goal-list/goal-list.component';
 import { CreateGoalComponent } from 'src/app/goals/create-goal/create-goal.component';
 import { ExerciseListComponent } from 'src/app/exercises/exercise-list/exercise-list.component';
 import { EditExerciseComponent } from 'src/app/exercises/edit-exercise/edit-exercise.component';
-import { MatTableModule, MatProgressBarModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('NavBarComponent', () => {

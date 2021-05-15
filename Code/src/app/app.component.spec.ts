@@ -7,7 +7,8 @@ import { ExerciseListComponent } from './exercises/exercise-list/exercise-list.c
 import { EditExerciseComponent } from './exercises/edit-exercise/edit-exercise.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app-routing.module';
-import { MatTableModule, MatProgressBarModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {

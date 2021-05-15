@@ -1,5 +1,7 @@
 
-import { MatToolbarModule, MatSnackBarModule, MatCheckbox, MatCheckboxModule } from '@angular/material';
+import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
